@@ -20,6 +20,7 @@
                     --default-before-txtsc: #7c7c7c;
                     --default-text-scale: #fff;
                     --green: greenyellow;
+                    --yellow: yellow;
                 }
             }
 
@@ -32,6 +33,7 @@
                     --default-before-txtsc: #7c7c7c;
                     --default-text-scale: #000;
                     --green: green;
+                    --yellow: rgb(202, 202, 38);
                 }
             }
 
@@ -45,6 +47,9 @@
             }
             .center-b {
                 align-items: center;
+            }
+            .center-c {
+                justify-content: center;
             }
             .column {
                 flex-direction: column;
@@ -166,9 +171,9 @@
         <section class="two flex column">
             <h2 style="margin: 0 0 12px 0;">His devices</h2>
             <div class="grid">
-                <div class="card flex center-a">
+                <div class="card flex center-c column">
                     <div class="phone-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone">
                             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
                         </svg>
                     </div>
@@ -180,9 +185,9 @@
                         <p class="grayed-text">Status: <span style="color: var(--green);">Active as main device</span></p>
                     </div>
                 </div>
-                <div class="card flex center-a">
+                <div class="card flex center-c column">
                     <div class="phone-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone">
                             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
                         </svg>
                     </div>
@@ -194,9 +199,9 @@
                         <p class="grayed-text">Status: <span style="color: red;">Inactive, broken</span></p>
                     </div>
                 </div>
-                <div class="card flex center-a">
+                <div class="card flex center-c column">
                     <div class="phone-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
                         </svg>
                     </div>
