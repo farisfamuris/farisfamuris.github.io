@@ -1,0 +1,213 @@
+<html>
+    <head>
+        <title>Rissu</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+            * {font-family: 'DM Sans', sans-serif, serif;}
+            *, *::after, *::before {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --default-text: #e2e2e2;
+                    --default-card-color: #0c0c0c;
+                    --default-bg: #141414;
+                    --default-border: #333;
+                    --default-before-txtsc: #7c7c7c;
+                    --default-text-scale: #fff;
+                    --green: greenyellow;
+                }
+            }
+
+            @media (prefers-color-scheme: light) {
+                :root {
+                    --default-text: #202020;
+                    --default-card-color: #dbd9d9;
+                    --default-bg: #e2e2e2;
+                    --default-border: #ccc;
+                    --default-before-txtsc: #7c7c7c;
+                    --default-text-scale: #000;
+                    --green: green;
+                }
+            }
+
+            /* class variable */
+            .flex {
+                display: flex;
+            }
+            .center-a {
+                align-items: center;
+                justify-content: center;
+            }
+            .center-b {
+                align-items: center;
+            }
+            .column {
+                flex-direction: column;
+            }
+            /* main */
+            body {
+                background: var(--default-bg);
+                color: var(--default-text);
+            }
+
+            a {
+                text-decoration: none;
+                color: currentColor;
+            }
+
+            .links {
+                margin: 0 10px;
+            }
+
+            .inner {
+                justify-content: space-around !important;
+                flex: auto;
+            }
+
+            .outer {
+                background: var(--default-bg);
+                border-bottom: var(--default-border) 1px solid;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            .inner {
+                padding: 10px;
+            }
+
+            #edit,
+            .links {
+                color: var(--default-before-txtsc);
+                transform: scale(1);
+                transition: 0.5s;
+            }
+
+            #edit:hover,
+            .links:hover,
+            .active {
+                color: var(--default-text-scale);
+                transform: scale(1.1);
+                transition: 0.5s;
+            }
+
+            .grayed-text {
+                color: var(--default-before-txtsc);
+            }
+
+            section.one,
+            section.two {
+                padding: 40px;
+            }
+
+            section.one {
+                border-bottom: var(--default-border) 1px solid;
+                height: 100%;
+            }
+
+            spacer {
+                width: 100px;
+                height: 5px;
+            }
+
+            .card {
+                background: var(--default-card-color);
+                padding: 24px;
+                border-radius: 5px;
+            }
+
+            .grid {
+                padding: 10px;
+                display: grid;
+                gap: 2rem;
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="flex center-a outer">
+            <div class="flex center-a inner">
+                <div class="flex center-a logo">
+                    <svg width="64" height="64" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M27.6311 29.104C27.6884 28.9893 27.8174 28.9177 28.0181 28.889C28.2474 28.8317 28.7778 28.7887 29.6091 28.76C30.4691 28.7313 31.8451 28.717 33.7371 28.717C34.3391 28.717 35.8298 28.7313 38.2091 28.76C40.6171 28.76 42.7384 28.76 44.5731 28.76L61.2141 28.803L61.3001 32.759V34.049C61.3001 35.8263 61.2284 36.8153 61.0851 37.016C60.8844 37.2453 56.9858 37.36 49.3891 37.36H37.9081L37.3061 37.919C37.0194 38.2057 36.8474 38.5067 36.7901 38.822C36.7614 39.1087 36.7471 39.9257 36.7471 41.273C36.7471 42.563 36.7758 43.3657 36.8331 43.681C36.8904 43.9963 37.0481 44.283 37.3061 44.541L37.8221 45.1H45.1321C50.0054 45.1 52.5568 45.2147 52.7861 45.444C53.0441 45.702 53.1731 47.0637 53.1731 49.529C53.1731 51.9943 53.0441 53.356 52.7861 53.614C52.5568 53.8433 50.0054 53.958 45.1321 53.958H37.8221L37.3061 54.517C37.0481 54.775 36.8904 55.076 36.8331 55.42C36.7758 55.764 36.7471 56.6527 36.7471 58.086C36.7471 60.0927 36.6754 61.2393 36.5321 61.526C36.4174 61.7267 36.1308 61.8413 35.6721 61.87C35.2421 61.9273 34.0668 61.956 32.1461 61.956C29.3654 61.956 27.8891 61.87 27.7171 61.698C27.5164 61.4973 27.4161 55.119 27.4161 42.563C27.4161 33.8483 27.4878 29.362 27.6311 29.104ZM85.666 37.747C85.1787 37.5177 84.634 37.3743 84.032 37.317C83.43 37.231 81.9823 37.1737 79.689 37.145L74.744 37.102V45.358L76.034 46.648H80.119C82.6703 46.648 84.8633 46.5907 86.698 46.476C87.8447 46.4187 88.5757 46.3613 88.891 46.304C89.2063 46.218 89.493 46.046 89.751 45.788C90.095 45.444 90.267 45.0857 90.267 44.713C90.267 44.6557 90.2527 44.5553 90.224 44.412C90.224 44.2687 90.224 44.154 90.224 44.068C90.1093 42.8353 89.622 41.6313 88.762 40.456C87.9307 39.252 86.8987 38.349 85.666 37.747ZM73.153 28.416C74.6437 28.3873 76.55 28.373 78.872 28.373C82.226 28.373 84.5337 28.459 85.795 28.631C87.0563 28.803 88.3607 29.19 89.708 29.792C92.546 31.082 94.825 32.974 96.545 35.468C98.2937 37.962 99.2827 40.8 99.512 43.982C99.5693 44.7273 99.598 45.186 99.598 45.358C99.598 46.046 99.426 46.476 99.082 46.648C98.7667 46.7913 98.0213 46.863 96.846 46.863C95.556 46.863 94.567 46.9777 93.879 47.207C93.2197 47.4363 92.6607 47.852 92.202 48.454C91.6287 49.1993 91.342 49.9733 91.342 50.776C91.342 51.464 91.5713 52.1807 92.03 52.926C92.4313 53.5853 92.9473 54.044 93.578 54.302C94.2087 54.5313 95.169 54.646 96.459 54.646C98.007 54.646 98.91 54.8037 99.168 55.119C99.4547 55.4343 99.598 56.4663 99.598 58.215C99.598 59.9923 99.5263 61.0243 99.383 61.311C99.2683 61.5117 98.9817 61.6263 98.523 61.655C98.093 61.7123 96.932 61.741 95.04 61.741C92.3167 61.741 90.8403 61.698 90.611 61.612C90.3817 61.526 90.267 60.6373 90.267 58.946C90.267 57.7993 90.2383 57.0683 90.181 56.753C90.1237 56.409 89.9947 56.108 89.794 55.85L89.278 55.291H82.914C78.9867 55.3197 76.679 55.4343 75.991 55.635C75.2743 55.8643 74.873 56.409 74.787 57.269C74.7583 57.5557 74.744 58.0287 74.744 58.688V59.118C74.744 60.666 74.658 61.526 74.486 61.698C74.2853 61.8987 72.551 61.999 69.283 61.999C67.4483 61.999 66.359 61.9417 66.015 61.827C65.8717 61.7697 65.7713 60.8093 65.714 58.946C65.6853 57.0827 65.671 52.453 65.671 45.057V28.459L73.153 28.416ZM35.6511 70.544C35.6511 68.05 35.7515 66.7027 35.9521 66.502C36.1528 66.3013 40.3525 66.201 48.5511 66.201C56.7211 66.201 60.9065 66.3013 61.1071 66.502C61.3078 66.7027 61.4081 70.802 61.4081 78.8C61.4081 86.7693 61.3078 90.8543 61.1071 91.055C60.9351 91.227 60.2185 91.313 58.9571 91.313C57.7818 91.313 56.8931 91.399 56.2911 91.571C55.6891 91.7143 55.1301 92.0153 54.6141 92.474C54.0121 93.0187 53.6251 93.5347 53.4531 94.022C53.2811 94.5093 53.1951 95.398 53.1951 96.688V97.677C53.1951 98.5657 53.0518 99.1247 52.7651 99.354C52.4785 99.612 51.7045 99.741 50.4431 99.741C50.0705 99.741 48.9095 99.7123 46.9601 99.655C44.0361 99.5977 42.0151 99.483 40.8971 99.311C39.8078 99.139 38.6468 98.7807 37.4141 98.236C36.6688 97.892 35.8661 97.462 35.0061 96.946C34.3468 96.5447 34.0028 96.3727 33.9741 96.43H33.9311C33.7878 96.43 33.2431 95.914 32.2971 94.882C31.3511 93.8213 30.6631 92.9757 30.2331 92.345C29.0865 90.625 28.2838 88.7043 27.8251 86.583C27.5958 85.5797 27.4811 84.777 27.4811 84.175C27.4811 83.573 27.6388 83.2003 27.9541 83.057C28.1835 82.9137 29.6168 82.799 32.2541 82.713C32.9995 82.6843 33.8308 82.67 34.7481 82.67C35.6368 82.67 36.1958 82.8277 36.4251 83.143C36.6545 83.4583 36.7691 83.788 36.7691 84.132C36.7691 84.648 36.9698 85.3217 37.3711 86.153C37.7725 86.9843 38.2455 87.6867 38.7901 88.26C39.7361 89.292 40.7968 90.023 41.9721 90.453C43.1761 90.883 44.7815 91.098 46.7881 91.098C46.9315 91.098 47.1465 91.098 47.4331 91.098C47.7198 91.0693 47.9491 91.055 48.1211 91.055C49.5258 90.9977 50.3715 90.9403 50.6581 90.883C50.9735 90.8257 51.2745 90.6537 51.5611 90.367L52.2061 89.765L52.2491 82.326L52.3351 74.887H44.2511C38.8905 74.887 36.1241 74.801 35.9521 74.629C35.7515 74.4283 35.6511 73.0667 35.6511 70.544ZM65.692 83.229C65.692 72.4503 65.7923 66.9607 65.993 66.76C66.1937 66.5593 67.6127 66.459 70.25 66.459C72.916 66.459 74.3493 66.5593 74.55 66.76C74.722 66.932 74.808 68.0787 74.808 70.2V73.382L76.098 74.672H82.462C85.7013 74.672 87.6937 74.629 88.439 74.543C89.213 74.457 89.7433 74.2133 90.03 73.812C90.202 73.5827 90.3023 72.4503 90.331 70.415C90.331 68.351 90.4027 67.1757 90.546 66.889C90.6607 66.6883 90.9473 66.5737 91.406 66.545C91.8647 66.4877 93.0543 66.459 94.975 66.459C96.8957 66.459 98.0853 66.4877 98.544 66.545C99.0027 66.5737 99.2893 66.6883 99.404 66.889C99.5473 67.147 99.619 72.6223 99.619 83.315C99.619 90.367 99.5903 94.8103 99.533 96.645C99.5043 98.4797 99.4183 99.4687 99.275 99.612C99.017 99.87 97.641 99.999 95.147 99.999C92.481 99.999 91.0047 99.8557 90.718 99.569C90.5173 99.397 90.4027 98.9383 90.374 98.193C90.3453 97.4763 90.331 95.355 90.331 91.829V84.476C89.7003 83.96 89.2417 83.573 88.955 83.315H76.098L74.808 84.605V92.044C74.808 95.5413 74.7793 97.6627 74.722 98.408C74.6933 99.182 74.5787 99.6263 74.378 99.741C74.0913 99.913 72.7727 99.999 70.422 99.999C67.67 99.999 66.1937 99.8987 65.993 99.698C65.7923 99.4973 65.692 94.0077 65.692 83.229Z" fill="white"/>
+                    </svg>
+                </div>
+                <div class="flex center-a opt">
+                    <a class="links active" href="/">Main</a>
+                    <a class="links" href="/project">Project</a>
+                    <a class="links" href="https://github.com/farisfamuris">Github</a>
+                </div>
+                <div class="flex center-a edit">
+                    <a id="edit" href="https://github.com/farisfamuris/farisfamuris.github.io" aria-label="Edit this page" title="Edit this page">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <section class="one flex center-a column">
+            <h1>Meet Rissu!</h1>
+            <p class="grayed-text">Known as Faris. An Indonesian person, that like his coffee than his crush.</p>
+            <p class="grayed-text">I learn about Operating System like Windows & Android.</p>
+            <spacer></spacer>
+            <p class="grayed-text">I joined WIP since 2019, and joined the phone's world since 1 January 2023.</p>
+            <p class="grayed-text">Well, just like that.</p>
+            <p class="grayed-text">(His hobby is programming. Although, little bit lazy doing his hobby lol)</p>
+        </section>
+        <section class="two flex column">
+            <h2 style="margin: 0 0 12px 0;">His devices</h2>
+            <div class="grid">
+                <div class="card flex center-a">
+                    <div class="phone-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <spacer style="width: 20px;"></spacer>
+                    <div class="details">
+                        <h3>Samsung Galaxy A10s/DS</h3>
+                        <p class="grayed-text"><b>SM-A107F</b></p>
+                        <spacer></spacer>
+                        <p class="grayed-text">Status: <span style="color: var(--green);">Active as main device</span></p>
+                    </div>
+                </div>
+                <div class="card flex center-a">
+                    <div class="phone-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+                        </svg>
+                    </div>
+                    <spacer style="width: 20px;"></spacer>
+                    <div class="details">
+                        <h3>Samsung Galaxy M10/DS</h3>
+                        <p class="grayed-text"><b>SM-M105G</b></p>
+                        <spacer></spacer>
+                        <p class="grayed-text">Status: <span style="color: red;">Inactive, broken</span></p>
+                    </div>
+                </div>
+                <div class="card flex center-a">
+                    <div class="phone-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-monitor">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <spacer style="width: 20px;"></spacer>
+                    <div class="details">
+                        <h3>Lenovo Thinkpad L421</h3>
+                        <p class="grayed-text"><b>L421</b></p>
+                        <spacer></spacer>
+                        <p class="grayed-text">Status: <span style="color: var(--green);">Active as main device</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
